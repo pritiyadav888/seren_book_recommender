@@ -29,16 +29,17 @@ function fetchRecommendations(e, title, author) {
                 card.classList.add('card');
 
                 card.innerHTML = `
-                    <img src="${rec.image}" alt="Book cover">
-                    <div>
-                        <h3>${rec.book_title}</h3>
-                        <h3>Author: ${rec.author_name}</h3>
-                        <p>${rec.description}</p>
-                        <div class="button-group">
-                            ${rec.borrow_link ? `<a href="${rec.borrow_link}" target="_blank" class="recommendation-button">Borrow</a>` : ''}
-                            <a href="${rec.buy_link}" target="_blank" class="recommendation-button">View on Google Books</a>
-                        <button class="get-recommendation-button">Want recommendations?</button>
+                <img src="${rec.image}" alt="Book cover">
+                <div>
+                    <h3>${rec.book_title}</h3>
+                    <h3>Author: ${rec.author_name}</h3>
+                    <p>${rec.description}</p>
+                    <div class="button-group">
+                        ${rec.borrow_link ? `<a href="${rec.borrow_link}" target="_blank" class="recommendation-button">Borrow</a>` : ''}
+                        <a href="${rec.book_link}" target="_blank" class="recommendation-button">View Book Details</a>
                     </div>
+                    <button class="get-recommendation-button">Want recommendations?</button>
+                </div>
                 `;
 
                 card.querySelector(".get-recommendation-button").addEventListener("click", () => {
@@ -102,7 +103,7 @@ function fetchBookDetails(e) {
                     <p>${book.description}</p>
                     <div class="button-group">
                         ${book.borrow_link ? `<a href="${book.borrow_link}" target="_blank" class="recommendation-button">Borrow</a>` : ''}
-                        <a href="${book.buy_link}" target="_blank" class="recommendation-button">View on Google Books</a>
+                        <a href="${book.book_link}" target="_blank" class="recommendation-button">View Book Details</a>
                     </div>
                     <button class="get-recommendation-button">Want recommendations?</button>
                 </div>

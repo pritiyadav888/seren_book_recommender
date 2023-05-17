@@ -4,10 +4,12 @@ import random
 import openai
 import requests
 import os
+from dotenv import load_dotenv
+# Load .env file
+load_dotenv()
 
 app = Flask(__name__, template_folder='templates',static_url_path='/static')
 openai.api_key = os.getenv('OPENAI_API_KEY')
-
 
 @app.route('/')
 def index():
@@ -36,7 +38,8 @@ def get_book_details_open_library(title):
                 'authors': work.get('author_name', []),
                 'categories': categories,
                 'borrow_link': f"https://openlibrary.org{work.get('key', '')}/borrow" if work.get('key') else 'No borrow link available',
-                'image': f"https://covers.openlibrary.org/b/id/{work.get('cover_i', '')}-M.jpg" if work.get('cover_i') else book_image_default,  # added default image
+                'image': f"https://covers.openlibrary.org/b/id/{work.get('cover_i', '')}-M.jpg" if work.get('cover_i') else book_image_default,
+                'book_link': f"https://openlibrary.org{work.get('key', '')}" if work.get('key') else 'No book link available',  # added book_link
             }
 
             return book_details
@@ -47,7 +50,8 @@ def get_book_details_open_library(title):
         'authors': [],
         'categories': [],
         'borrow_link': 'No borrow link available',
-        'image': book_image_default , # added default image
+        'image': book_image_default,
+        'book_link': 'No book link available',  # added book_link
     }
 
 def get_book_details_google_books(title, author=None):
@@ -70,11 +74,12 @@ def get_book_details_google_books(title, author=None):
                     'description': volume_info.get('description', 'No description available'),
                     'authors': volume_info.get('authors', []),
                     'categories': volume_info.get('categories', []),
-                    'isbn_10': volume_info.get('industryIdentifiers', [{}])[0].get('identifier'),  # added isbn
+                    'isbn_10': volume_info.get('industryIdentifiers', [{}])[0].get('identifier'),
                     'buy_link': volume_info.get('selfLink', 'No buy link available'),
                     'maturity_rating': volume_info.get('maturityRating', 'Not specified'),
                     'image': volume_info.get('imageLinks', {}).get('thumbnail', book_image_default),
-                    'google_books_id': book.get('id', ''),  # Add this line
+                    'google_books_id': book.get('id', ''),
+                    'book_link': volume_info.get('infoLink', 'No book link available'),  # added book_link
                 }
                 book_details.append(details)
             return book_details
@@ -212,7 +217,8 @@ def chatbot():
             'author_name': author_name_recommended,
             'description': detailed_description,
             'image': recommended_book_details['image'],
-            'canonicalVolumeLink': recommended_book_details.get('buy_link'),  # add this line
+            'canonicalVolumeLink': recommended_book_details.get('buy_link'),  # add this line,
+            'book_link':recommended_book_details.get('book_link')
         })
 
         print(f"Recommendation {i}: {book_title_recommended} by {author_name_recommended}")
