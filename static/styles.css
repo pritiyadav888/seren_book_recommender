@@ -1,0 +1,190 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('https://images.unsplash.com/photo-1535905496755-26ae35d0ae54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* .card, section {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card:hover, section:hover {
+    box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.1);
+} */
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 20px;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #4db8bb;
+}
+
+main {
+    margin: 20px;
+}
+
+.card {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; 
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card img {
+    width: 100%;
+    height: 80%; 
+    margin-bottom: 15px;
+    object-fit: contain; 
+    border-radius: 15px;
+    transition: transform .2s; 
+}
+
+.card img:hover {
+    transform: scale(1.1); 
+}
+
+section {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    min-height: 200px;
+    height: auto;
+}
+.card p {
+    background-color: rgba(255, 255, 255, 0.8); /* Set the desired background color */
+    padding: 10px; /* Adjust padding as needed */
+  }
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+form input[type="text"], form input[type="submit"], .recommendation-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    width: 100%; 
+}
+
+form input[type="submit"], .recommendation-button {
+    color: white;
+    cursor: pointer;
+    background-color: #4db8bb;
+}
+
+.get-recommendation-button{
+    color: white;
+    cursor: pointer;
+    background-color: #aacfd0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+}
+
+.input-group {
+    padding: 10px 30px;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* #rec_title, #rec_author {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #aac
+} */
+
+#search_section, #recommendation_section {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+
+    min-height: 200px;
+    height: auto;
+}
+
+#search_section h2, #recommendation_section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #aacfd0;
+}
+
+.cards {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    overflow: hidden; /* to prevent overflowing onto other elements */
+}
+
+.disclaimer {
+    padding: 15px;
+    margin-top: 20px;
+    color: #eee716; /* Light Brown text color */
+    font-size: 0.9em;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.button-group a {
+    flex: 1;
+    text-align: center;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Adjust the height based on your design */
+    font-size: 18px;
+    color: #d9e9ee;
+}
+  
+.error-message {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+}

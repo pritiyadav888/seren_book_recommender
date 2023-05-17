@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seren - Your Book Recommender</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Seren</h1>
+      <p>Your personal assistant for book recommendations</p>
+    </header>
+
+    <main>
+      <!-- Search Section -->
+      <section id="search_section" class="card">
+        <h2>Search For Book Here</h2>
+        <h3>
+          Please type Book and Author name
+        </h3>
+        <form id="search_form" onsubmit="fetchBookDetails(event)">
+          <div class="input-group">
+            <input
+              id="book"
+              type="text"
+              name="book"
+              required
+              placeholder="Book name"
+            />
+          </div>
+          <div class="input-group">
+            <input id="author" type="text" name="author" placeholder="Author name" />
+          </div>
+          <input type="submit" value="Search" />
+        </form>
+        <div id="search_results" class="cards"></div>
+    </section>
+    
+
+      <!-- Recommendation Section -->
+      <section id="recommendation_section">
+        <h2>Get Recommendations</h2>
+        <h3>
+          Tell Us What Have You Been Reading. Please type Book and Author name
+        </h3>
+        <form id="recommendation_form" onsubmit="fetchRecommendations(event)">
+          <div class="input-group">
+            <input
+              type="text"
+              id="rec_title"
+              name="rec_title"
+              required
+              placeholder="Book name"
+            />
+          </div>
+
+          <div class="input-group">
+            <input
+              type="text"
+              id="rec_author"
+              name="rec_author"
+              required
+              placeholder="Author name"
+            />
+          </div>
+
+          <input type="submit" value="Get Recommendations" />
+        </form>
+        
+        
+        <div id="recommendations" class="cards"></div>
+      </section>
+
+      <div class="disclaimer" style="text-align: center">
+        <p>Please note</p>
+        <p>
+          While we strive to provide the best possible recommendations, we
+          cannot guarantee the suitability, accuracy, or appropriateness of any
+          book recommended. Please use discretion when choosing your next read.
+        </p>
+      </div>
+     
+    </main>
+  </body>
+</html>
