@@ -8533,3 +8533,90 @@
 
 05/18/2023 03:19:52 PM set git remote heroku to https://git.heroku.com/seren.git
 
+05/18/2023 03:19:53 PM 
+05/18/2023 03:19:53 PM [main 0f47502] deploying to heroku
+ 79 files changed, 8207 insertions(+)
+ create mode 100755 venv/bin/gunicorn
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/LICENSE
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/METADATA
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/RECORD
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/REQUESTED
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/entry_points.txt
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn-20.1.0.dist-info/top_level.txt
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__main__.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/__main__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/arbiter.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/config.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/debug.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/errors.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/glogging.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/pidfile.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/reloader.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/sock.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/systemd.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/__pycache__/util.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/__pycache__/base.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/__pycache__/pasterapp.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/__pycache__/wsgiapp.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/base.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/pasterapp.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/arbiter.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/config.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/debug.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/errors.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/glogging.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__pycache__/body.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__pycache__/errors.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__pycache__/message.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__pycache__/parser.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__pycache__/unreader.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/__pycache__/wsgi.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/body.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/errors.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/message.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/parser.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/unreader.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/http/wsgi.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/instrument/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/instrument/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/instrument/__pycache__/statsd.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/instrument/statsd.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/pidfile.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/reloader.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/sock.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/systemd.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/util.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/base.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/base_async.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/geventlet.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/ggevent.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/gthread.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/gtornado.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/sync.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/__pycache__/workertmp.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/base.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/base_async.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/geventlet.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/ggevent.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/gthread.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/gtornado.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/sync.py
+ create mode 100644 venv/lib/python3.10/site-packages/gunicorn/workers/workertmp.py
+
+05/18/2023 03:21:01 PM 
+05/18/2023 03:26:44 PM Procfile already exists
+05/18/2023 03:26:48 PM Reinitialized existing Git repository in /Users/priti/Desktop/resume/Job Predictor/.git/
+
+05/18/2023 03:26:52 PM set git remote heroku to https://git.heroku.com/seren.git
+
