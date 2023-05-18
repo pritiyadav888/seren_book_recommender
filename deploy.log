@@ -8630,3 +8630,29 @@
 
 05/18/2023 03:29:05 PM set git remote heroku to https://git.heroku.com/seren.git
 
+05/18/2023 03:29:06 PM 
+05/18/2023 03:29:06 PM [main d8d7919] deploying to heroku
+ 56 files changed, 3074 insertions(+), 2986 deletions(-)
+ delete mode 100644 venv/lib/python3.10/site-packages/Flask-1.1.2.dist-info/RECORD
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/INSTALLER (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/LICENSE.rst (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/METADATA (50%)
+ create mode 100644 venv/lib/python3.10/site-packages/Flask-2.0.1.dist-info/RECORD
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/REQUESTED (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/WHEEL (54%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/entry_points.txt (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/top_level.txt (100%)
+ delete mode 100644 venv/lib/python3.10/site-packages/flask/__pycache__/_compat.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/flask/__pycache__/scaffold.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/flask/__pycache__/typing.cpython-310.pyc
+ delete mode 100644 venv/lib/python3.10/site-packages/flask/_compat.py
+ create mode 100644 venv/lib/python3.10/site-packages/flask/py.typed
+ create mode 100644 venv/lib/python3.10/site-packages/flask/scaffold.py
+ create mode 100644 venv/lib/python3.10/site-packages/flask/typing.py
+
+05/18/2023 03:30:14 PM 
+05/18/2023 03:32:21 PM Procfile already exists
+05/18/2023 03:32:24 PM Reinitialized existing Git repository in /Users/priti/Desktop/resume/Job Predictor/.git/
+
+05/18/2023 03:32:25 PM set git remote heroku to https://git.heroku.com/seren.git
+
