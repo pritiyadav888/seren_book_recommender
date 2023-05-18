@@ -94,6 +94,21 @@ form input[type="text"], form input[type="submit"], .recommendation-button {
     font-size: 1em;
     width: 100%; 
 }
+.get-recommendation-button, #surprise_me {
+    background-color: #4db8bb;
+    padding: 8px 15px; /* Adjust as needed */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: auto; /* Let the width adjust based on the content */
+}
+
 
 form input[type="submit"], .recommendation-button {
     color: white;
