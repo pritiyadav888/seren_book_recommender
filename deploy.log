@@ -8656,3 +8656,13 @@
 
 05/18/2023 03:32:25 PM set git remote heroku to https://git.heroku.com/seren.git
 
+05/18/2023 03:32:25 PM 
+05/18/2023 03:32:26 PM [main 46be6c9] deploying to heroku
+ 2 files changed, 27 insertions(+)
+
+05/18/2023 03:33:29 PM 
+05/18/2023 03:38:21 PM Procfile already exists
+05/18/2023 03:38:24 PM Reinitialized existing Git repository in /Users/priti/Desktop/resume/Job Predictor/.git/
+
+05/18/2023 03:38:25 PM set git remote heroku to https://git.heroku.com/seren.git
+
