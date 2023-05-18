@@ -25,7 +25,7 @@ def create_requirements():
 def create_procfile():
     if not os.path.isfile('Procfile'):
         with open('Procfile', 'w') as f:
-            f.write('web: python app.py')
+            f.write('web: gunicorn app:app')
         logging.info("Procfile has been successfully created")
     else:
         logging.info("Procfile already exists")
