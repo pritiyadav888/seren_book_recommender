@@ -10,11 +10,6 @@ import os
 from dotenv import load_dotenv
 from collections import defaultdict
 
-app = Flask(__name__, template_folder='templates',static_url_path='/static')
-openai.api_key = os.getenv('OPENAI_API_KEY')
-app.secret_key = secrets.token_hex(16)
-# Set the max age for cookies (session lifetime)
-app.permanent_session_lifetime = timedelta(days=1)
 # Load .env file
 load_dotenv()
 
@@ -24,6 +19,8 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 app.secret_key = secrets.token_hex(16)
 book_image_default = 'static/default.png'  # default placeholder image
 
+# Set the max age for cookies (session lifetime)
+app.permanent_session_lifetime = timedelta(days=1)
 # Add this at the top of your Flask app
 user_history = defaultdict(list)
 
