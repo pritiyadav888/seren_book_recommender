@@ -44,7 +44,7 @@ def push_to_heroku(heroku_app_name):
         "heroku git:remote -a " + heroku_app_name,
         "git add .",
         "git commit -m 'deploying to heroku'",
-        "git push heroku master"
+        "git push heroku main"
     ]
 
     for cmd in commands:
