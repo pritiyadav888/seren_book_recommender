@@ -14,13 +14,13 @@ def run_cmd(cmd):
     stdout, stderr = process.communicate()
     return stdout.decode('utf-8'), stderr.decode('utf-8'), process.returncode
 
-# def create_requirements():
-#     stdout, stderr, exitcode = run_cmd("pip freeze > requirements.txt")
-#     if exitcode == 0:
-#         logging.info("requirements.txt has been successfully created/updated")
-#     else:
-#         logging.error(f"An error occurred during requirements.txt creation: {stderr}")
-#         return exitcode
+def create_requirements():
+    stdout, stderr, exitcode = run_cmd("pip freeze > requirements.txt")
+    if exitcode == 0:
+        logging.info("requirements.txt has been successfully created/updated")
+    else:
+        logging.error(f"An error occurred during requirements.txt creation: {stderr}")
+        return exitcode
 
 def create_procfile():
     if not os.path.isfile('Procfile'):
