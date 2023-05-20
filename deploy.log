@@ -9005,3 +9005,14 @@ error: failed to push some refs to 'https://git.heroku.com/seren.git'
 
 05/18/2023 06:58:52 PM set git remote heroku to https://git.heroku.com/seren.git
 
+05/18/2023 06:58:53 PM 
+05/18/2023 06:58:53 PM [main 7ed5355] deploying to heroku
+ 1 file changed, 28 insertions(+)
+
+05/18/2023 07:03:16 PM An error occurred during executing 'git push heroku main': fatal: unable to access 'https://git.heroku.com/seren.git/': Failed to connect to git.heroku.com port 443 after 262533 ms: Couldn't connect to server
+
+05/19/2023 05:13:10 PM Procfile already exists
+05/19/2023 05:13:12 PM Reinitialized existing Git repository in /Users/priti/Desktop/resume/Job Predictor/.git/
+
+05/19/2023 05:13:14 PM set git remote heroku to https://git.heroku.com/seren.git
+

@@ -174,22 +174,46 @@ def generate_detailed_description(book_details):
     # Return the generated description
     return response.choices[0].text.strip()
 
-# Function to chat with GPT-3 model
 def chat_with_gpt(message):
     try:
+        prompt_type = 'surprise_me' if 'surprise' in message.lower() else 'chatbot'
+        system_message, user_message = "", ""
+
+        if prompt_type == 'chatbot':
+            system_message = (f"You are Seren, a helpful assistant who provides book recommendations. Your goal "
+                              f"is to recommend books based on the user's recent reading, '{message}'. Consider "
+                              "cross-genre recommendations, similar writing styles, unconventional recommendations, "
+                              "author connections, emerging trends, and culturally diverse recommendations. "
+                              "You are capable of learning about books using Google Books and OpenLibrary APIs.")
+            user_message = (f"I just finished reading {message}. I'm interested in cross-genre recommendations, "
+                            "books with similar writing styles, unconventional but well-rated books, authors connected "
+                            "to the one I've read, emerging trends in the literary world, and culturally diverse literature. "
+                            "Can you recommend a few books that I might enjoy?")
+        elif prompt_type == 'surprise_me':
+            system_message = (f"You are Seren, a helpful assistant who provides serendipitous book recommendations. "
+                              f"Your goal is to recommend unexpected but interesting books to the user based on their recent "
+                              f"reading, '{message}'. Consider cross-genre recommendations, similar writing styles, "
+                              "unconventional recommendations, author connections, emerging trends, and culturally diverse "
+                              "recommendations. You are capable of learning about books using Google Books and OpenLibrary APIs.")
+            user_message = (f"I just finished reading {message}. I'm looking for a surprise. I'm open to any genre, "
+                            "and I love discovering new authors and trends. Recommend something unique, diverse, "
+                            "and unexpected that I might enjoy!")
+
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are Seren, a helpful assistant who provides serendipitous book recommendations not random. Your goal is to recommend unexpected but interesting books to the user based on their recent reading, favorite author, and favorite genre. Consider cross-genre recommendations, similar writing styles, unconventional recommendations, author connections, emerging trends, and culturally diverse recommendations. Do not reply to any other topic than books. You are capable of learning about books using Google Books and OpenLibrary APIs. ANSWER RECOMMENDATION IN A LIST 1- 3"},
-                {"role": "user", "content": message},
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": user_message},
             ],
-            max_tokens=300  # Increase the number of tokens
+            max_tokens=300
         )
+
         # Extract the response from the chat model
         response_str = response.choices[0].message['content']
 
         # Return the response
         return response_str
+
     except openai.OpenAIError as e:
         print(f"Error encountered while trying to chat with GPT-3.5 Turbo: {e}")
         abort(500, description=f"Error encountered while trying to chat with GPT-3.5 Turbo: {str(e)}")
@@ -210,7 +234,7 @@ def chatbot():
 
     book_title = data.get('book_title', None)
     author_name = data.get('author_name', None)
-
+    print(f"{book_title} and {author_name} :Details by user")
     if not book_title or not author_name:
         abort(400, description="Both book title and author name are required.")
 
@@ -320,7 +344,7 @@ def surprise_me():
     data = request.get_json()
     book_title = data.get('book_title', None)
     author_name = data.get('author_name', None)
-
+    print(f"{book_title} and {author_name} :Details by user")
     if not book_title or not author_name:
         return jsonify({'error': 'Both book title and author name are required.'}), 400
 
