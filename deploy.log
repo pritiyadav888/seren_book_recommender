@@ -228,3 +228,13 @@ error: failed to push some refs to 'https://git.heroku.com/seren.git'
 
 05/19/2023 06:31:50 PM set git remote heroku to https://git.heroku.com/seren.git
 
+05/19/2023 06:31:50 PM 
+05/19/2023 06:31:50 PM [main 63b3a03] deploying to heroku
+ 1 file changed, 10 insertions(+)
+
+05/19/2023 06:32:41 PM 
+05/19/2023 06:41:09 PM Procfile already exists
+05/19/2023 06:41:12 PM Reinitialized existing Git repository in /Users/priti/Desktop/resume/Job Predictor/.git/
+
+05/19/2023 06:41:15 PM set git remote heroku to https://git.heroku.com/seren.git
+
