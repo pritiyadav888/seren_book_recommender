@@ -30,3 +30,30 @@ error: failed to push some refs to 'https://git.heroku.com/seren.git'
 
 05/19/2023 05:33:57 PM set git remote heroku to https://git.heroku.com/seren.git
 
+05/19/2023 05:33:57 PM 
+05/19/2023 05:33:57 PM [main d332be3] deploying to heroku
+ 2 files changed, 28 insertions(+), 1 deletion(-)
+
+05/19/2023 05:34:17 PM An error occurred during executing 'git push heroku main': remote: Updated 8841 paths from 5f8eb50        
+remote: Compressing source files... done.        
+remote: Building source:        
+remote: 
+remote: -----> Building on the Heroku-22 stack        
+remote: -----> Using buildpack: heroku/python        
+remote: -----> App not compatible with buildpack: https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz        
+remote:        More info: https://devcenter.heroku.com/articles/buildpacks#detection-failure        
+remote: 
+remote:  !     Push failed        
+remote: Verifying deploy...        
+remote: 
+remote: !	Push rejected to seren.        
+remote: 
+To https://git.heroku.com/seren.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/seren.git'
+
+05/19/2023 05:36:11 PM Procfile already exists
+05/19/2023 05:36:15 PM Reinitialized existing Git repository in /Users/priti/Desktop/resume/Job Predictor/.git/
+
+05/19/2023 05:36:19 PM set git remote heroku to https://git.heroku.com/seren.git
+
