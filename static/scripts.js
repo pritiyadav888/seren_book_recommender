@@ -57,9 +57,11 @@ function fetchRecommendations(e, title, author) {
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
-            loadingElement.style.display = 'none';
-            div.innerHTML = 'Something went wrong, please refresh the page and try again later.';
+            // Add additional information
+            console.error('Error message:', error.message);
+            console.error('Error stack:', error.stack);
         });
+        
     }, 2000); // delay of 2 seconds
 }
 
