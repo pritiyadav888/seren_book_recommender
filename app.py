@@ -302,7 +302,7 @@ def chatbot():
             'description': detailed_description,
             'image': recommended_book_details['image'],
             'canonicalVolumeLink': recommended_book_details.get('buy_link'),
-            'book_link': recommended_book_details.get('book_link')
+            'book_link': recommended_book_details.get('buy_link')
         })
 
         # Add the recommended book to the user's history
@@ -401,20 +401,20 @@ def surprise_me():
         'description': detailed_description,
         'image': recommended_book_details['image'],
         'canonicalVolumeLink': recommended_book_details.get('buy_link'),
-        'book_link': recommended_book_details.get('book_link')
+        'book_link': recommended_book_details.get('buy_link')
     }
 
     print("======surprise function========")
     print("title for the book generated:--", surprise_book['book_title'])
     print("User ID:", user_id)
-    print("Favorite genre: ",favorite_genre)
-    print("Favorite author: ",favorite_author)
+    print("Favorite genre: ", favorite_genre)
+    print("Favorite author: ", favorite_author)
     print("User History:", user_history[user_id])
     print("======surprise function ends========")
 
     return jsonify({
         'message': f"Surprise! Here is a book recommendation for you: {book_title_recommended} by {author_name_recommended}. This book is {quirky_description()}. Enjoy!",
-        'recommendation':surprise_book
+        'recommendation': surprise_book
     })
 
 if __name__ == "__main__":
