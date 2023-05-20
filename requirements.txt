@@ -3,3 +3,4 @@ openai==0.25.0
 pymongo==4.3.3
 python-dotenv==1.0.0
 requests==2.26.0
+gunicorn
