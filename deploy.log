@@ -143,3 +143,78 @@ error: failed to push some refs to 'https://git.heroku.com/seren.git'
 
 05/19/2023 05:42:29 PM set git remote heroku to https://git.heroku.com/seren.git
 
+05/19/2023 05:42:29 PM 
+05/19/2023 05:42:30 PM [main 58ee354] deploying to heroku
+ 172 files changed, 6232 insertions(+), 3565 deletions(-)
+ delete mode 100644 venv/lib/python3.10/site-packages/Flask-1.1.2.dist-info/RECORD
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/INSTALLER (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/LICENSE.rst (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/METADATA (50%)
+ create mode 100644 venv/lib/python3.10/site-packages/Flask-2.0.1.dist-info/RECORD
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/REQUESTED (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/WHEEL (54%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/entry_points.txt (100%)
+ rename venv/lib/python3.10/site-packages/{Flask-1.1.2.dist-info => Flask-2.0.1.dist-info}/top_level.txt (100%)
+ delete mode 100644 venv/lib/python3.10/site-packages/flask/__pycache__/_compat.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/flask/__pycache__/scaffold.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/flask/__pycache__/typing.cpython-310.pyc
+ delete mode 100644 venv/lib/python3.10/site-packages/flask/_compat.py
+ rename venv/lib/python3.10/site-packages/{openai-0.25.0.dist-info/REQUESTED => flask/py.typed} (100%)
+ create mode 100644 venv/lib/python3.10/site-packages/flask/scaffold.py
+ create mode 100644 venv/lib/python3.10/site-packages/flask/typing.py
+ delete mode 100644 venv/lib/python3.10/site-packages/openai-0.25.0.dist-info/METADATA
+ delete mode 100644 venv/lib/python3.10/site-packages/openai-0.25.0.dist-info/RECORD
+ rename venv/lib/python3.10/site-packages/{openai-0.25.0.dist-info => openai-0.27.6.dist-info}/INSTALLER (100%)
+ rename venv/lib/python3.10/site-packages/{openai-0.25.0.dist-info => openai-0.27.6.dist-info}/LICENSE (100%)
+ create mode 100644 venv/lib/python3.10/site-packages/openai-0.27.6.dist-info/METADATA
+ create mode 100644 venv/lib/python3.10/site-packages/openai-0.27.6.dist-info/RECORD
+ create mode 100644 venv/lib/python3.10/site-packages/openai-0.27.6.dist-info/REQUESTED
+ rename venv/lib/python3.10/site-packages/{openai-0.25.0.dist-info => openai-0.27.6.dist-info}/WHEEL (100%)
+ rename venv/lib/python3.10/site-packages/{openai-0.25.0.dist-info => openai-0.27.6.dist-info}/entry_points.txt (100%)
+ rename venv/lib/python3.10/site-packages/{openai-0.25.0.dist-info => openai-0.27.6.dist-info}/top_level.txt (100%)
+ create mode 100644 venv/lib/python3.10/site-packages/openai-0.27.6.dist-info/zip-safe
+ delete mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/__pycache__/answer.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/__pycache__/audio.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/__pycache__/chat_completion.cpython-310.pyc
+ delete mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/__pycache__/classification.cpython-310.pyc
+ delete mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/__pycache__/search.cpython-310.pyc
+ delete mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/answer.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/audio.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/chat_completion.py
+ delete mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/classification.py
+ delete mode 100644 venv/lib/python3.10/site-packages/openai/api_resources/search.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/__pycache__/common.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/__pycache__/numpy_helper.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/__pycache__/pandas_helper.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/common.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/numpy_helper.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/datalib/pandas_helper.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/test_api_requestor.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/test_endpoints.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/test_exceptions.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/test_file_cli.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/test_long_examples_validator.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/test_url_composition.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/__pycache__/test_util.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/asyncio/__init__.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/asyncio/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/asyncio/__pycache__/test_endpoints.cpython-310.pyc
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/asyncio/test_endpoints.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/test_api_requestor.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/test_endpoints.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/test_exceptions.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/test_file_cli.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/test_long_examples_validator.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/test_url_composition.py
+ create mode 100644 venv/lib/python3.10/site-packages/openai/tests/test_util.py
+
+05/19/2023 05:43:36 PM 
+05/19/2023 06:27:57 PM Procfile already exists
+05/19/2023 06:28:01 PM Reinitialized existing Git repository in /Users/priti/Desktop/resume/Job Predictor/.git/
+
+05/19/2023 06:28:04 PM set git remote heroku to https://git.heroku.com/seren.git
+

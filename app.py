@@ -1,22 +1,23 @@
 from datetime import timedelta
 import secrets
 import string
+from dotenv import load_dotenv
 from flask import Flask, abort, request, jsonify, render_template, session
 import re
 import random
 import openai
 import requests
 import os
-from dotenv import load_dotenv
+from db import MongoDB
 from collections import defaultdict
-
+load_dotenv()
 app = Flask(__name__, template_folder='templates',static_url_path='/static')
 openai.api_key = os.getenv('OPENAI_API_KEY')
 app.secret_key = secrets.token_hex(16)
 # Set the max age for cookies (session lifetime)
 app.permanent_session_lifetime = timedelta(days=1)
 # Load .env file
-load_dotenv()
+mongodb = MongoDB()
 
 # Set a random secret key
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
@@ -38,13 +39,14 @@ def index():
     if 'user_id' not in session:
         # Generate a unique user ID and store it in the session
         session['user_id'] = generate_user_id()
+        # Save the user to MongoDB
+        mongodb.save_user(session['user_id'])
 
     # Print user ID and history
     print("User ID:", session['user_id'])
     print("User History:", user_history[session['user_id']])
 
     return render_template('chat.html', recommendations=recommendations)
-
 
 # Function to generate a unique user ID
 def generate_user_id():
@@ -305,8 +307,10 @@ def chatbot():
             'book_link': recommended_book_details.get('buy_link')
         })
 
-        # Add the recommended book to the user's history
+         # Add the recommended book to the user's history
         user_history[user_id].append(book_title_recommended.lower())
+        # Update the user's recommendations in MongoDB
+        mongodb.add_recommendation(user_id, book_title_recommended)
 
     # Filter out the book the user just read
     recommendations = [rec for rec in recommendations if rec['book_title'].lower() != book_title.lower()]
@@ -323,20 +327,17 @@ def chatbot():
 @app.route('/set_favorites', methods=['POST'])
 def set_favorites():
     data = request.get_json()
-    if not data:
-        abort(400, description="No data provided.")
+    favorite_author = data.get('favorite_author')
+    favorite_genre = data.get('favorite_genre')
 
-    favorite_author = data.get('favorite_author', None)
-    favorite_genre = data.get('favorite_genre', None)
+    user_id = session.get('user_id', None)
+    if user_id is None:
+        abort(400, description="No user ID found in the session.")
 
-    if not favorite_author and not favorite_genre:
-        abort(400, description="Both favorite author and favorite genre are required.")
+    # Save the favorite author and genre to MongoDB
+    mongodb.save_user_favorites(user_id, favorite_author, favorite_genre)
 
-    # set favorite author and favorite genre in session
-    session['favorite_author'] = favorite_author
-    session['favorite_genre'] = favorite_genre
-
-    return jsonify({'message': 'Favorites set successfully'}), 200
+    return jsonify({'message': 'Favorites saved successfully.'})
 
 
 @app.route('/surprise_me', methods=['POST'])
@@ -403,6 +404,8 @@ def surprise_me():
         'canonicalVolumeLink': recommended_book_details.get('buy_link'),
         'book_link': recommended_book_details.get('buy_link')
     }
+    # Update user recommendations in MongoDB
+    mongodb.add_recommendation(user_id, book_title_recommended)
 
     print("======surprise function========")
     print("title for the book generated:--", surprise_book['book_title'])
