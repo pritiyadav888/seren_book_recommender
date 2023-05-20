@@ -54,6 +54,11 @@ function fetchRecommendations(e, title, author) {
             // Reset input values
             document.getElementById('rec_title').value = '';
             document.getElementById('rec_author').value = '';
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+            // Add additional information
+            console.error('Error message:', error.message);
         });
         
     }, 2000); // delay of 2 seconds
@@ -124,6 +129,14 @@ function fetchBookDetails(e) {
         // Scroll to the recommendation section
         let recommendationSection = document.getElementById('recommendation_section');
         recommendationSection.scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+        loadingElement.style.display = 'none';
+        let errorMessage = document.createElement('div');
+        errorMessage.classList.add('error-message');
+        errorMessage.textContent = error.message;
+        div.appendChild(errorMessage);
     });
 }
 
@@ -190,6 +203,14 @@ function fetchSurpriseBook() {
         // Scroll to the recommendation section
         let recommendationSection = document.getElementById('recommendation_section');
         recommendationSection.scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+        loadingElement.style.display = 'none';
+        let errorMessage = document.createElement('div');
+        errorMessage.classList.add('error-message');
+        errorMessage.textContent = 'Something went wrong, please refresh the page and try again later.';
+        div.appendChild(errorMessage);
     });
 }
 
