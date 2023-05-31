@@ -243,6 +243,7 @@ span {
 #backButton {
   margin-top: 40px;
 }
+
 #progressBar {
   display: none;
 }
@@ -416,9 +417,22 @@ span {
 
 /* Responsive Styles */
 
+@media (max-width: 1200px) {
+  .cardBox {
+    width: 600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .cardBox {
+    width: 500px;
+  }
+}
+
 @media (max-width: 768px) {
   .cardBox {
     width: 100%;
+    max-width: 500px;
   }
 
   .book-img,
@@ -480,18 +494,12 @@ span {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  line-height: 1.5;
-  white-space: pre-line;
-  text-align: center;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 #aboutButton:hover::after {
   opacity: 1;
-  pointer-events: auto;
-  z-index: 2; /* Bring the content above other elements */
+  visibility: visible;
 }
-
