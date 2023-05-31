@@ -117,18 +117,19 @@ def generate_book_recommendation(mood, current_book_details, recommendations):
         )
 
         prompt += f"""
-        The current user has just finished reading "{current_book_details['title']}" by {current_book_details['authors'][0] if current_book_details['authors'] else 'unknown author'}, a book of {genre}.
+        You have just finished reading "{current_book_details['title']}" by {current_book_details['authors'][0] if current_book_details['authors'] else 'unknown author'}, a book of {genre}.
 
         The user is currently in a {mood} mood. Keeping in mind the user's recent reading experience and their current mood, recommend a unique book that they might not find on their own, but would likely enjoy reading next. Please explain why you think this book would be a good fit.
 
         Start your recommendation with 'I recommend:' followed by the book title. Include the reasoning behind your recommendation.
+
         """
 
         recommendation = openai.Completion.create(
             engine="text-davinci-002",
             prompt=prompt,
             temperature=0.5,
-            max_tokens=300
+            max_tokens=200  # Adjust the max tokens value to generate a longer description
         )
 
         text = recommendation.choices[0].text.strip()
@@ -154,6 +155,7 @@ def generate_book_recommendation(mood, current_book_details, recommendations):
         recommended_book_details['image'] = recommended_book_image
 
         return recommended_book_name, text
+
 
 
 

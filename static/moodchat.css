@@ -469,18 +469,18 @@ span {
 }
 
 #aboutButton::after {
-  content: "Introducing Moody, your personalized Book Recommendation Assistant! Moody revolutionizes the way you discover new books by understanding your mood and reading choices. It delivers tailored recommendations that match your unique preferences.With Moody, you'll receive hand-picked book suggestions with detailed explanations, helping you find perfect fits you might have missed. Moody takes into account your mood and adapts to your style, whether you prefer cheerful, mysterious, or straightforward recommendations. Discover captivating reads tailored to your mood with Moody. Let it guide you on exciting literary adventures and unlock a universe of personalized reading possibilities.";
+  content: "Introducing Moody, your personalized Book Recommendation Assistant! Moody revolutionizes the way you discover new books by understanding your mood and reading choices. Moody takes into account your mood and adapts to your style, whether you prefer cheerful, mysterious, or straightforward recommendations. Discover captivating reads tailored to your mood with Moody. Let it guide you on exciting literary adventures and unlock a universe of personalized reading possibilities.";
   position: absolute;
-  top: 70px;
+  top: calc(100% + 10px); /* Position below the About button */
   right: 20px;
-  width: 400px;
+  width: 250px;
   background: #fff;
   color: #000;
   font-size: 14px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1;
+  z-index: 1000;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
@@ -492,4 +492,6 @@ span {
 #aboutButton:hover::after {
   opacity: 1;
   pointer-events: auto;
+  z-index: 2; /* Bring the content above other elements */
 }
+

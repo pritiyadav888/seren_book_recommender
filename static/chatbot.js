@@ -230,3 +230,43 @@ function updateBookSuggestions(suggestion) {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const shareIcons = document.querySelectorAll(".share-icon");
+  
+    shareIcons.forEach(function(icon) {
+      icon.addEventListener("click", function(event) {
+        event.preventDefault();
+  
+        const platform = icon.getAttribute("data-platform");
+        const bookTitle = document.getElementById("recommendedBookTitle").textContent;
+        const bookAuthor = document.getElementById("recommendedBookAuthor").textContent;
+        const bookBuyLink = document.getElementById("recommendedBookBuyLink").getAttribute("href");
+  
+        let shareUrl;
+  
+        // Define the share URL based on the chosen platform
+        switch (platform) {
+          case "telegram":
+            shareUrl = `https://t.me/share/url?url=${bookBuyLink}&text=${bookTitle} by ${bookAuthor}`;
+            break;
+          case "instagram":
+            shareUrl = `https://www.instagram.com/?url=${bookBuyLink}`;
+            break;
+          case "whatsapp":
+            shareUrl = `https://api.whatsapp.com/send?text=${bookTitle} by ${bookAuthor}%0A${bookBuyLink}`;
+            break;
+          case "twitter":
+            shareUrl = `https://twitter.com/intent/tweet?text=${bookTitle} by ${bookAuthor}&url=${bookBuyLink}`;
+            break;
+          default:
+            break;
+        }
+  
+        if (shareUrl) {
+          window.open(shareUrl);
+        }
+      });
+    });
+  });
+  
