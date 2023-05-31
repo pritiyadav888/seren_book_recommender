@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Recommendation</title>
+    <link rel="stylesheet" type="text/css" href="static/moodchat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div class="steps-container">
+        <h2 class="fade-in">How to Use the App</h2>
+    
+        <ul>
+            <li class="fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#03e9f4">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 14l5-5 5 5H7z"/>
+                </svg>
+                Step 1: Enter the book name in the input field.
+            </li>
+            <li class="fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#03e9f4">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 14l5-5 5 5H7z"/>
+                </svg>
+                Step 2: Select your mood from the dropdown list.
+            </li>
+            <li class="fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#03e9f4">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 14l5-5 5 5H7z"/>
+                </svg>
+                Step 3: Click on the "Get Recommendations" button.
+            </li>
+        </ul>
+    </div>
+   
+    <div class="progress-10" id="progressBar"></div>
+
+    <div class="cardBox" style="display: none;">
+        <div class="card">
+            
+            <!-- other content here -->
+            <div class="content">
+                <div class="row">
+                    <div class="card">
+                       
+                        <div class="bookInfo">
+                            <h3>Moody's Recommendation</h3>
+                            <br>
+                            <img id="recommendedBookImage" class="book-img" src="" alt="recommended book image">
+                            <h3 id="recommendedBookTitle"></h3>
+                            <p id="recommendedBookAuthor"></p>
+                            <a id="recommendedBookBuyLink" href="#" target="_blank">Buy Book</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <!-- <img id="moodyImage" class="book-img" src="static/chatbot.png" alt="moody image"> -->
+                        <!-- <h3>Moody</h3> -->
+                        <p id="chatbotResponse"></p>
+                    </div>
+                    
+                </div>
+                <button id="backButton">Back</button>
+            </div>
+        </div>
+    </div>
+    <div id="cookieConsentBanner" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;  padding: 20px; border-radius: 10px;">
+        <p>We use cookies to personalize content, and to analyze our traffic. Do you consent to our cookies if you continue to use this website?</p>
+        <div class="agree">
+        <button id="cookieConsentYes">Yes</button>
+        <button id="cookieConsentNo">No</button>
+        </div>  
+    </div>
+      
+    <div class="login-box" id="login-box">
+        <h2>Book Recommendation</h2>
+        <form id="recommendationForm">
+            <div class="user-box">
+                <input type="text" id="book_name" name="book_name" list="book_suggestions" required autocomplete="off">
+                <label>Book Name</label>
+                <datalist id="book_suggestions"></datalist>
+            </div>            
+            <div class="user-box">
+                <select id="mood" name="mood" required>
+                    <option value="" disabled selected>Select Mood</option>
+                    <option value="cheerful">Cheerful</option>
+                    <option value="mysterious">Mysterious</option>
+                    <option value="irritated">Irritated</option>
+                </select>
+            </div>
+            <button type="submit" id="getRecommendationsButton">Get Recommendations</button>
+
+        </form>
+    </div>
+    <a id="aboutButton" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="static/chatbot.js"></script>
+</body>
+</html>

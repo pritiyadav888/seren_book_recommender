@@ -2,3 +2,4 @@
 .DS_Store
 .vscode/
 deploy.py
+deploy.log
