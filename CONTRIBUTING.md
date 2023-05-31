@@ -56,7 +56,6 @@ Contributors to Moody are expected to adhere to the [Code of Conduct](CODE_OF_CO
 
 If you have any questions, concerns, or need further assistance, feel free to contact the project maintainers:
 
-- John Doe - john@example.com
-- Jane Smith - jane@example.com
+Priti Yadav- pritiyadav888@gmail.com
 
 We appreciate your contributions and look forward to your involvement in improving Moody!
