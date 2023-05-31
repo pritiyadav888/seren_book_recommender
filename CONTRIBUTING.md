@@ -20,11 +20,20 @@ If you encounter a bug or issue with the Moody application, please follow these 
 If you have a suggestion for a new feature or improvement, we encourage you to submit a feature request. Follow these steps:
 
 1. Go to the [Issues](https://github.com/pritiyadav888/seren_book_recommender/issues/new?assignees=&labels=feature+request&template=feature_request.md&title=) tab on the GitHub repository.
+1. Provide a descriptive title and a clear description of the feature or improvement you are proposing.
+2. Include any relevant details, such as use cases or examples.
+3. Submit the issue and await further discussions or feedback.
+
+Or
+
+1. Go to the [Issues](https://github.com/pritiyadav888/seren_book_recommender/issues) tab on the GitHub repository.
 2. Click on the "New Issue" button.
 3. Choose the "Feature Request" template.
 4. Provide a descriptive title and a clear description of the feature or improvement you are proposing.
 5. Include any relevant details, such as use cases or examples.
-6. Submit the issue and await further discussions or feedback.
+6. Submit the issue and await further discussions or feedback. 
+
+
 
 ## Pull Requests
 
