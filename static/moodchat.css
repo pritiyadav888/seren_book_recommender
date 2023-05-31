@@ -11,7 +11,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  background: #141e30;
+  background-color: rgb(20, 70, 87);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -449,6 +449,10 @@ span {
 
   .login-box {
     width: 90%;
+  }
+
+  .steps-container ul li {
+    font-size: 16px;
   }
 }
 
