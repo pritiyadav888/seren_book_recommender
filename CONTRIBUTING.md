@@ -8,7 +8,7 @@ Please take a moment to review the guidelines outlined below to ensure a smooth 
 
 If you encounter a bug or issue with the Moody application, please follow these steps to submit a bug report:
 
-1. Go to the [Issues](https://github.com/your-username/moody/issues) tab on the GitHub repository.
+1. Go to the [Issues](https://github.com/pritiyadav888/seren_book_recommender/issues) tab on the GitHub repository.
 2. Click on the "New Issue" button.
 3. Provide a descriptive title and a clear description of the bug or issue.
 4. Include steps to reproduce the bug if possible.
@@ -19,7 +19,7 @@ If you encounter a bug or issue with the Moody application, please follow these 
 
 If you have a suggestion for a new feature or improvement, we encourage you to submit a feature request. Follow these steps:
 
-1. Go to the [Issues](https://github.com/your-username/moody/issues) tab on the GitHub repository.
+1. Go to the [Issues](https://github.com/pritiyadav888/seren_book_recommender/issues/new?assignees=&labels=feature+request&template=feature_request.md&title=) tab on the GitHub repository.
 2. Click on the "New Issue" button.
 3. Choose the "Feature Request" template.
 4. Provide a descriptive title and a clear description of the feature or improvement you are proposing.
