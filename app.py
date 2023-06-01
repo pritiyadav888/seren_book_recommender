@@ -2,24 +2,23 @@ import requests
 import json
 from flask import Flask, request, jsonify, make_response
 import openai
-from datetime import datetime, timedelta
-import secrets
-import string
 from dotenv import load_dotenv
-from flask import Flask, abort, request, jsonify, render_template, session
+from flask import Flask, abort, request, jsonify, render_template
 import re
-import random
 import openai
 import requests
 import os
-from db import MongoDB
-from collections import defaultdict
+# from db import MongoDB
+# Load environment variables
 load_dotenv()
 
+# Set OpenAI API Key,use .env to store the keys
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
+# Initialize Flask application
 app = Flask(__name__)
 
+# Define character traits for assistant based on user mood
 WHO_YOU_ARE_MOODS = {
     "cheerful": """- You are a helpful assistant.
 - You are kind, compassionate, and optimistic.""",
@@ -38,6 +37,7 @@ HOW_YOU_BEHAVE_MOODS = {
 - You prioritize getting to the point and avoid unnecessary information."""
 }
 
+# Define system prompt
 SYSTEM_PROMPT = """Who you are:
 {who_you_are_mood_extension}
 
@@ -46,6 +46,7 @@ How you behave:
 {how_you_behave_mood_extension}
 """
 
+# Function to fetch book details from Google Books API
 def get_book_details_google_books(title, author=None):
     query = f'intitle:{title}'
     if author:
@@ -72,6 +73,7 @@ def get_book_details_google_books(title, author=None):
             return details
     return {}
 
+# Flask route for getting book suggestions based on partial name
 @app.route('/get_suggestions', methods=['POST'])
 def get_suggestions():
     data = request.get_json()
@@ -105,8 +107,7 @@ def get_suggestions():
 
     return response
 
-
-
+# Function to generate book recommendation based on user mood
 def generate_book_recommendation(mood, current_book_details, recommendations):
     while True:
         genre = current_book_details['categories'][0] if current_book_details['categories'] else "unknown genre"
@@ -156,9 +157,7 @@ def generate_book_recommendation(mood, current_book_details, recommendations):
 
         return recommended_book_name, text
 
-
-
-
+# Main Flask route for handling GET and POST requests
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
@@ -190,6 +189,7 @@ def home():
             return jsonify({'error': 'Book details not found.'})
     else:
         return render_template('moodchat.html')
-    
+
+# Run Flask application 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
